@@ -44,8 +44,8 @@ const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
 
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(1000); // pow(10, 3)
-const uint64_t COIN                                          = UINT64_C(100000000); // pow(10, 6)
-const uint64_t MINIMUM_FEE                                   = UINT64_C(10); // pow(10, 4)
+const uint64_t COIN                                          = UINT64_C(1000000); // pow(10, 6)
+const uint64_t MINIMUM_FEE                                   = UINT64_C(10000); // pow(10, 4)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(10000); // pow(10, 4)
 const unsigned EMISSION_SPEED_FACTOR 			     		 = 18;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
@@ -99,9 +99,9 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(1500) * parameters::POINT);
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150) * parameters::POINT);
 const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(100) * parameters::COIN); // 20.4 billion ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(1500) * parameters::COIN);
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(150) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Catalyst";
