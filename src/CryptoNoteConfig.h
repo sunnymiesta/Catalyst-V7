@@ -57,7 +57,7 @@ const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 22000; // ~1 month
 const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 22000; // ~1 year
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
-const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 20; // percentage rate for DEPOSIT_MAX_TERM
+const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
@@ -99,9 +99,9 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(15000) * parameters::POINT);
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(100) * parameters::POINT);
 const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(100) * parameters::COIN); // 20.4 billion ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(15000) * parameters::COIN);
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(150000) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Catalyst";
