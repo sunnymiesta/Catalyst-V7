@@ -53,7 +53,7 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
 
-const uint64_t DEPOSIT_MIN_AMOUNT                            = 500 * COIN;
+const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 22000; // ~1 month
 const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 22000; // ~1 year
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
@@ -99,9 +99,9 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(10000) * parameters::POINT);
-const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(50) * parameters::COIN); // 20.4 billion ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(10000) * parameters::COIN);
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(1500) * parameters::POINT);
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(100) * parameters::COIN); // 20.4 billion ICO
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(1500) * parameters::COIN);
 const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Catalyst";
