@@ -55,7 +55,7 @@ const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
 
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month
-const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 22000; // ~1 year
+const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year
 const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
 const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
