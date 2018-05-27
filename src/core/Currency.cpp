@@ -531,8 +531,8 @@ difficulty_type Currency::nextDifficulty(uint8_t version, uint32_t blockIndex, s
     size_t N = m_difficultyWindow;
 
 	// return a difficulty of 1 for first 3 blocks if it's the start of the chain
-	if (timestamps.size() < 4) {
-		return 1;
+	if (timestamps.size() < 10) {
+		return 1000;
 	}
 	// otherwise, use a smaller N if the start of the chain is less than N+1
 	else if (timestamps.size() < N + 1) {
@@ -570,10 +570,10 @@ difficulty_type Currency::nextDifficulty(uint8_t version, uint32_t blockIndex, s
 	next_difficulty = static_cast<uint64_t>(nextDifficulty);
 
 	// minimum limit
-	// remove it for testnet, uncomment in production
-	//if (!isTestnet() && next_difficulty < 100000) {
-	//	next_difficulty = 100000;
-	//}
+	// in production set larger
+	if (!isTestnet() && next_difficulty < 1000) {
+		next_difficulty = 1000;
+	}
 
 	return next_difficulty;
 }
