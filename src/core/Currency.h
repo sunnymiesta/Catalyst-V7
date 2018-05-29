@@ -35,6 +35,7 @@ public:
 
   uint64_t moneySupply() const { return m_moneySupply; }
   unsigned int emissionSpeedFactor() const { return m_emissionSpeedFactor; }
+  size_t cryptonoteCoinVersion() const { return m_cryptonoteCoinVersion; }
   //uint64_t genesisBlockReward() const { return m_genesisBlockReward; }
 
   size_t rewardBlocksWindow() const { return m_rewardBlocksWindow; }
@@ -77,13 +78,13 @@ public:
   uint64_t mempoolTxFromAltBlockLiveTime() const { return m_mempoolTxFromAltBlockLiveTime; }
   uint64_t numberOfPeriodsToForgetTxDeletedFromPool() const { return m_numberOfPeriodsToForgetTxDeletedFromPool; }
 
-  uint64_t upgradeHeight() const { return m_upgradeHeight; }
+  uint32_t upgradeHeight() const { return m_upgradeHeightV3; }
   unsigned int upgradeVotingThreshold() const { return m_upgradeVotingThreshold; }
   size_t upgradeVotingWindow() const { return m_upgradeVotingWindow; }
   size_t upgradeWindow() const { return m_upgradeWindow; }
   size_t minNumberVotingBlocks() const { return (m_upgradeVotingWindow * m_upgradeVotingThreshold + 99) / 100; }
-  uint64_t maxUpgradeDistance() const { return static_cast<uint64_t>(m_upgradeWindow); }
-  uint64_t calculateUpgradeHeight(uint64_t voteCompleteHeight) const { return voteCompleteHeight + m_upgradeWindow; }
+  uint32_t maxUpgradeDistance() const { return static_cast<uint64_t>(m_upgradeWindow); }
+  uint32_t calculateUpgradeHeight(uint64_t voteCompleteHeight) const { return voteCompleteHeight + m_upgradeWindow; }
 
   size_t transactionMaxSize() const { return m_transactionMaxSize; }
   size_t fusionTxMaxSize() const { return m_fusionTxMaxSize; }
@@ -157,6 +158,7 @@ private:
 
   uint64_t m_moneySupply;
   unsigned int m_emissionSpeedFactor;
+  size_t m_cryptonoteCoinVersion;
   //uint64_t m_genesisBlockReward;
 
   size_t m_rewardBlocksWindow;
@@ -200,7 +202,8 @@ private:
   uint64_t m_mempoolTxFromAltBlockLiveTime;
   uint64_t m_numberOfPeriodsToForgetTxDeletedFromPool;
 
-  uint64_t m_upgradeHeight;
+  uint32_t m_upgradeHeightV2;
+  uint32_t m_upgradeHeightV3;
   unsigned int m_upgradeVotingThreshold;
   size_t m_upgradeVotingWindow;
   size_t m_upgradeWindow;
@@ -255,6 +258,7 @@ public:
 
   CurrencyBuilder& moneySupply(uint64_t val) { m_currency.m_moneySupply = val; return *this; }
   CurrencyBuilder& emissionSpeedFactor(unsigned int val);
+  CurrencyBuilder& cryptonoteCoinVersion(size_t val) { m_currency.m_cryptonoteCoinVersion = val; return *this; }
   //CurrencyBuilder& genesisBlockReward(uint64_t val) { m_currency.m_genesisBlockReward = val; return *this; }
 
   CurrencyBuilder& rewardBlocksWindow(size_t val) { m_currency.m_rewardBlocksWindow = val; return *this; }
@@ -297,7 +301,8 @@ public:
   CurrencyBuilder& mempoolTxFromAltBlockLiveTime(uint64_t val) { m_currency.m_mempoolTxFromAltBlockLiveTime = val; return *this; }
   CurrencyBuilder& numberOfPeriodsToForgetTxDeletedFromPool(uint64_t val) { m_currency.m_numberOfPeriodsToForgetTxDeletedFromPool = val; return *this; }
 
-  CurrencyBuilder& upgradeHeight(uint64_t val) { m_currency.m_upgradeHeight = val; return *this; }
+  CurrencyBuilder& upgradeHeightV2(uint32_t val) { m_currency.m_upgradeHeightV2 = val; return *this; }
+  CurrencyBuilder& upgradeHeightV3(uint32_t val) { m_currency.m_upgradeHeightV3 = val; return *this; }
   CurrencyBuilder& upgradeVotingThreshold(unsigned int val);
   CurrencyBuilder& upgradeVotingWindow(size_t val) { m_currency.m_upgradeVotingWindow = val; return *this; }
   CurrencyBuilder& upgradeWindow(size_t val);

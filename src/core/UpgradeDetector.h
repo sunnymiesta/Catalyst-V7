@@ -19,12 +19,12 @@
 namespace CryptoNote {
   class UpgradeDetectorBase {
   public:
-    enum : uint64_t {
-      UNDEF_HEIGHT = static_cast<uint64_t>(-1),
+    enum : uint32_t {
+      UNDEF_HEIGHT = static_cast<uint32_t>(-1),
     };
   };
 
-  static_assert(CryptoNote::UpgradeDetectorBase::UNDEF_HEIGHT == UINT64_C(0xFFFFFFFFFFFFFFFF), "UpgradeDetectorBase::UNDEF_HEIGHT has invalid value");
+ static_assert(CryptoNote::UpgradeDetectorBase::UNDEF_HEIGHT == UINT32_C(0xFFFFFFFF), "UpgradeDetectorBase::UNDEF_HEIGHT has invalid value");
 
   template <typename BC>
   class BasicUpgradeDetector : public UpgradeDetectorBase {
