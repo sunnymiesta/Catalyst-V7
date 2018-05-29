@@ -145,8 +145,9 @@ uint64_t Currency::baseRewardFunction(uint64_t alreadyGeneratedCoins, uint32_t h
 bool Currency::getBlockReward(size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins,
   uint64_t fee, uint32_t height, uint64_t& reward, int64_t& emissionChange) const {
 
-  assert(alreadyGeneratedCoins <= m_moneySupply);
-  uint64_t baseReward = baseRewardFunction(alreadyGeneratedCoins, height);
+  // assert(alreadyGeneratedCoins <= m_moneySupply);
+  assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
+  uint64_t baseReward = baseRewardFunction((m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor);
 
   medianSize = std::max(medianSize, m_blockGrantedFullRewardZone);
   if (currentBlockSize > UINT64_C(2) * medianSize) {
