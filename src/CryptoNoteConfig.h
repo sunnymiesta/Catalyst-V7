@@ -101,10 +101,10 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-//const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150000) * parameters::POINT);
-//const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1000) * parameters::COIN); // value start block ICO
-//const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(15000) * parameters::COIN);
-//const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
+const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150000) * parameters::POINT);
+const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1000) * parameters::COIN); // value start block ICO
+const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(15000) * parameters::COIN);
+const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
 const char     CRYPTONOTE_NAME[]                             = "Adina";
 const char     GENESIS_COINBASE_TX_HEX[]                     = "";
