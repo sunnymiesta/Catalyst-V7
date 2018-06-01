@@ -1,3 +1,4 @@
+//Copyright  (c) 2018-2019 Adina AU
 // Copyright (c) 2011-2017 The Cryptonote developers
 // Copyright (c) 2014-2017 XDN developers
 // Copyright (c) 2016-2017 BXC developers
@@ -14,18 +15,18 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 60; // seconds
 const uint64_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 600000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 600000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x60d4; // addresses start with "CA"
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0x60ca; // addresses start with "AU"
 const size_t   CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = DIFFICULTY_TARGET * 3;
 const uint64_t CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE           = 10;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(21000000000);
+const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1);
 
 
 //LWMA
@@ -40,24 +41,24 @@ const size_t   CRYPTONOTE_COIN_VERSION                       = 0;
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; // size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 10;
 
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(1000); // pow(10, 3)
 const uint64_t COIN                                          = UINT64_C(100000); // pow(10, 6)
 const uint64_t MINIMUM_FEE                                   = UINT64_C(10000); // pow(10, 4)
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(10000); // pow(10, 4)
-const unsigned EMISSION_SPEED_FACTOR 			     		 = 20;
+const unsigned EMISSION_SPEED_FACTOR 			     		 = 24;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
-const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
+const size_t   DIFFICULTY_WINDOW                             = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
 
-const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
-const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month [5k low, 50k mid, 100k high]
-const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year [5k low, 50k mid, 100k high]
-const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
-const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
+//const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
+//const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month [5k low, 50k mid, 100k high]
+//const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year [5k low, 50k mid, 100k high]
+//const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
+//const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
@@ -100,13 +101,13 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 } // parameters
 
-const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150000) * parameters::POINT);
-const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1000) * parameters::COIN); // value start block ICO
-const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(15000) * parameters::COIN);
-const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
+//const uint64_t START_BLOCK_REWARD                            = (UINT64_C(150000) * parameters::POINT);
+//const uint64_t ICO_BLOCK_REWARD	                             = (UINT64_C(1000) * parameters::COIN); // value start block ICO
+//const uint64_t MAX_BLOCK_REWARD                              = (UINT64_C(15000) * parameters::COIN);
+//const uint64_t REWARD_INCREASE_INTERVAL                      = (UINT64_C(264000));
 
-const char     CRYPTONOTE_NAME[]                             = "Catalyst";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff00018f01029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121012d402f2f715474bd8809f7eca544d43bd334095f6c186314b932d48ebf4ea3c9";
+const char     CRYPTONOTE_NAME[]                             = "Adina";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 const uint32_t GENESIS_NONCE                                 = 70;
 const uint64_t GENESIS_TIMESTAMP                             = 1526949013;
 
@@ -123,8 +124,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        = 10000; // by defa
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            = 128; // by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         = 1000;
 
-const int      P2P_DEFAULT_PORT                              = 4545;
-const int      RPC_DEFAULT_PORT                              = 4546;
+const int      P2P_DEFAULT_PORT                              = 15715;
+const int      RPC_DEFAULT_PORT                              = 15716;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                = 1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 = 5000;
@@ -139,11 +140,11 @@ const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000; // 5 second
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000; // 2 seconds
 const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000; // 5 seconds
-const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "FF9507CA55455F37A3B783EE2C5123B8B6A34A0C5CAAE050922C6254161480C1";
+const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const std::initializer_list<const char*> SEED_NODES = {
-  "seed1.catalyst.cash:4545",
-  "seed2.catalyst.cash:4545",
+  "node1.adina.host:15715",
+  "node2.adina.host:15715",
 };
 
 struct CheckpointData {
