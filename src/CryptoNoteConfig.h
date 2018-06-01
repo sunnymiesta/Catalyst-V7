@@ -26,7 +26,7 @@ const uint64_t CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE           = 10;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 11;
 
-const uint64_t MONEY_SUPPLY                                  = (uint64_t)(-1);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(21000000000);
 
 
 //LWMA
@@ -52,7 +52,7 @@ const unsigned EMISSION_SPEED_FACTOR 			     		 = 24;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
-const size_t   DIFFICULTY_WINDOW                             = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
+const size_t   DIFFICULTY_WINDOW                             = 60; // blocks
 
 const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
 const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month [5k low, 50k mid, 100k high]
