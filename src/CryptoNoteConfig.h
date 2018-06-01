@@ -54,11 +54,11 @@ static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
 
-//const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
-//const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month [5k low, 50k mid, 100k high]
-//const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year [5k low, 50k mid, 100k high]
-//const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
-//const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
+const uint64_t DEPOSIT_MIN_AMOUNT                            = 50000 * COIN;
+const uint32_t DEPOSIT_MIN_TERM                              = 100000; // ~1 month [5k low, 50k mid, 100k high]
+const uint32_t DEPOSIT_MAX_TERM                              = 1 * 12 * 100000; // ~1 year [5k low, 50k mid, 100k high]
+const uint64_t DEPOSIT_MIN_TOTAL_RATE_FACTOR                 = 0; // rate is constant
+const uint64_t DEPOSIT_MAX_TOTAL_RATE                        = 10; // percentage rate for DEPOSIT_MAX_TERM
 static_assert(DEPOSIT_MIN_TERM > 0, "Bad DEPOSIT_MIN_TERM");
 static_assert(DEPOSIT_MIN_TERM <= DEPOSIT_MAX_TERM, "Bad DEPOSIT_MAX_TERM");
 static_assert(DEPOSIT_MIN_TERM * DEPOSIT_MAX_TOTAL_RATE > DEPOSIT_MIN_TOTAL_RATE_FACTOR, "Bad DEPOSIT_MIN_TOTAL_RATE_FACTOR or DEPOSIT_MAX_TOTAL_RATE");
