@@ -41,7 +41,7 @@ const size_t   CRYPTONOTE_COIN_VERSION                       = 0;
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; // size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 10;
 
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(1000); // pow(10, 3)
