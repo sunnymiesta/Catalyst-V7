@@ -41,7 +41,7 @@ const size_t   CRYPTONOTE_COIN_VERSION                       = 0;
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; // size of block (bytes) after which reward for block calculated using block size
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 10;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 6;
 
 // COIN - number of smallest units in one coin
 const uint64_t POINT                                         = UINT64_C(1000); // pow(10, 3)
@@ -124,8 +124,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        = 10000; // by defa
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            = 128; // by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         = 1000;
 
-const int      P2P_DEFAULT_PORT                              = 15715;
-const int      RPC_DEFAULT_PORT                              = 15716;
+const int      P2P_DEFAULT_PORT                              = 4545;
+const int      RPC_DEFAULT_PORT                              = 4546;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                = 1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 = 5000;
@@ -146,6 +146,7 @@ const std::initializer_list<const char*> SEED_NODES = {
   "node1.adina.host:15715",
   "node2.adina.host:15715",
   "node3.adina.host:15715",
+  
 };
 
 struct CheckpointData {
