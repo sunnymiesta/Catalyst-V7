@@ -145,6 +145,7 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 const std::initializer_list<const char*> SEED_NODES = {
   "node1.adina.host:15715",
   "node2.adina.host:15715",
+  "node3.adina.host:15715",
 };
 
 struct CheckpointData {
